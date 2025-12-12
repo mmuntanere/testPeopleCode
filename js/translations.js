@@ -175,7 +175,11 @@ const translations = {
         "cookies.back": "Tornar a la pàgina principal",
         "cookies.title": "Política de Cookies",
         "cookies.msg": "Aquest lloc web no utilitza cookies.",
-        "cookies.desc": "No recollim dades de navegació ni rastregem la teva activitat mitjançant cookies."
+        "cookies.msg": "Aquest lloc web no utilitza cookies.",
+        "cookies.desc": "No recollim dades de navegació ni rastregem la teva activitat mitjançant cookies.",
+        "footer.privacy": "Política de Privacitat",
+        "footer.legal": "Avís Legal",
+        "footer.cookies": "Cookies"
     },
     "es": {
         "nav.home": "Inicio",
@@ -354,7 +358,11 @@ const translations = {
         "cookies.back": "Volver a la página principal",
         "cookies.title": "Política de Cookies",
         "cookies.msg": "Este sitio web no utiliza cookies.",
-        "cookies.desc": "No recogemos datos de navegación ni rastreamos tu actividad mediante cookies."
+        "cookies.msg": "Este sitio web no utiliza cookies.",
+        "cookies.desc": "No recogemos datos de navegación ni rastreamos tu actividad mediante cookies.",
+        "footer.privacy": "Política de Privacidad",
+        "footer.legal": "Aviso Legal",
+        "footer.cookies": "Cookies"
     },
     "en": {
         "nav.home": "Home",
@@ -651,6 +659,10 @@ const translations = {
         "cookies.back": "Back to Home",
         "cookies.title": "Cookies Policy",
         "cookies.msg": "This website does not use cookies.",
-        "cookies.desc": "We do not collect browsing data or track your activity using cookies."
+        "cookies.msg": "This website does not use cookies.",
+        "cookies.desc": "We do not collect browsing data or track your activity using cookies.",
+        "footer.privacy": "Privacy Policy",
+        "footer.legal": "Legal Notice",
+        "footer.cookies": "Cookies"
     }
 };
