@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Cookies | People Code</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#107090',
+                        secondary: '#109090',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased font-['Inter'] flex flex-col min-h-screen">
+
+    <div class="flex-grow flex items-center justify-center">
+        <div class="max-w-2xl mx-auto px-6 text-center">
+            <h1 class="text-4xl font-bold text-slate-900 mb-8" data-i18n="cookies.title">Política de Cookies</h1>
+
+            <div class="bg-white border border-slate-200 p-8 rounded-2xl shadow-xl">
+                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="w-8 h-8 text-primary">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="m9 12 2 2 4-4"></path>
+                    </svg>
+                </div>
+                <p class="text-xl text-slate-900 font-medium mb-2" data-i18n="cookies.msg">Aquest lloc web no utilitza
+                    cookies.</p>
+                <p class="text-slate-600" data-i18n="cookies.desc">No recollim dades de navegació ni rastregem la teva
+                    activitat mitjançant cookies.</p>
+            </div>
+
+            <div class="mt-12">
+                <a href="index.html"
+                    class="inline-flex items-center text-primary hover:text-primary font-semibold transition"
+                    data-i18n="cookies.back">
+                    &larr; Tornar a la pàgina principal
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Simple -->
+    <footer class="bg-white py-6 text-center text-slate-500 text-sm border-t border-slate-200">
+        &copy; 2024 People Code
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/translations.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

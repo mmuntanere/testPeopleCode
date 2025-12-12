@@ -1,0 +1,143 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #107090 0%, #109090 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-bg {
+    background: radial-gradient(circle at center, rgb(241 245 249 / 0.5) 0%, rgb(255 255 255) 100%);
+}
+
+/* Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+    border-color: #107090;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.progressive-blur {
+    backdrop-filter: blur(0px);
+    transition: backdrop-filter 2s ease-out, opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.progressive-blur.active {
+    backdrop-filter: blur(24px);
+    /* xl equivalent */
+}
+
+/* Logo Shine Animation */
+@keyframes logo-shine {
+    0% {
+        transform: translateX(-150%) skewX(-20deg);
+    }
+
+    15% {
+        transform: translateX(150%) skewX(-20deg);
+    }
+
+    100% {
+        transform: translateX(150%) skewX(-20deg);
+    }
+
+    /* Stay there for delay */
+}
+
+.logo-shine-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-shine-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(to right,
+            transparent 0%,
+            rgba(255, 255, 255, 0.6) 50%,
+            transparent 100%);
+    transform: translateX(-150%) skewX(-20deg);
+    animation: logo-shine 6s infinite ease-in-out;
+    pointer-events: none;
+    /* Use mask to constrain to image if possible, but for PNG img tag, 
+       we need to apply mask-image to the CONTAINER which has the image as mask? 
+       No, easier: shine effectively wipes OVER the image. 
+       To make it look like it's "inside" the lines:
+       We use mix-blend-mode: overlay or screen, OR better:
+       -webkit-mask-image: url('../logo.png'); with proper sizing. 
+    */
+    mix-blend-mode: overlay;
+}
+
+.logo-shine-container {
+    display: inline-flex;
+    /* Fit content */
+}
+
+.logo-shine-container::after {
+    /* Refine mask to follow logo shape */
+    -webkit-mask-image: url('../logo.png');
+    mask-image: url('../logo.png');
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    /* Ensure it covers the whole area */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    /* Make the shine stronger since it is masked */
+    background: linear-gradient(to right,
+            transparent 0%,
+            rgba(16, 112, 144, 0.8) 50%,
+            /* Bright teal shine */
+            transparent 100%);
+    mix-blend-mode: normal;
+    /* Normal blend since we mask it */
+}
