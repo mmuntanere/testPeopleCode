@@ -1178,3 +1178,21 @@ window.addEventListener('scroll', () => {
         }
     }
 });
+// -----------------------------------------------------------------------------
+// PHP Form Handling (Query Params)
+// -----------------------------------------------------------------------------
+window.addEventListener('load', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const status = urlParams.get('status');
+
+    if (status === 'success') {
+        const msg = (translations[currentLang]['form.success']) || "Missatge enviat correctament!";
+        alert(msg);
+        // Clear params
+        window.history.replaceState({}, document.title, window.location.pathname);
+    } else if (status === 'error') {
+        const msg = (translations[currentLang]['form.error']) || "Error en enviar el missatge. Prova-ho més tard.";
+        alert(msg);
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+});
